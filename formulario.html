@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <tbody>
+    <h3>Formulario Registro</h3>
+    <form action="datosformulario.php" method="post" value="formulario">
+      <table border=1>
+        <tr>
+          <td>
+            <label>Nombre :</label>
+            <input type="text" name="nombre">
+          </td>
+          <td>
+            <label>Fecha :</label>
+            <input type="date" name="fecha">
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <label>Apellido :</label>
+            <input type="text" name="apellido">
+          </td>
+          <td>
+            <label for="edad">Fecha Nacimiento</label>
+            <input type="date" name="edad">
+          </td>
+        <tr>
+        <tr>
+          <td>
+            <label for="email">Email</label>
+            <input type="email" name="email">
+          </td>
+          <td>
+            <label for="estrato">Estrato</label>
+            <select name="estrato">
+              <option name="estarto1">1</option>
+              <option name="estrato2">2</option>
+              <option name="estrato3">3</option>
+              <option name="estrato4">4</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="sexo">Sexo :</label>
+            <br>
+            <input type="radio" name="sexo" value="M">Masculino
+            <br>
+            <input type="radio" name="sexo" value="F">Femenino
+            <br>
+            <input type="radio" name="sexo" value="O">Otro
+          </td>
+          <td>
+            <label>Barrio :</label>
+            <select name="barrio">
+              <option name="delicias" value="D">Delicias</option>
+              <option name="vaiven" value="V">Vaiven</option>
+              <option name="repaso" value="R">Repaso</option>
+              <option name="campo" value="C">Campo</option>
+            </select>
+            <label>Ciudad :</label>
+            <select name="ciudad">
+              <option name="barranquilla" value="B">Barranquilla</option>
+              <option name="medellin" value="M">Medellin</option>
+              <option name="cucuta" value="C">Cucuta</option>
+              <option name="bogota" value="BO">Bogota</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="gustos">Gustos :</label>
+            <br>
+            <input type="checkbox" name="lectura">Lectura
+            <br>
+            <input type="checkbox" name="musica">Musica
+            <br>
+            <input type="checkbox" name="deporte">Deporte
+            <br>
+            <input type="checkbox" name="viajar">Viajar
+          </td>
+          <td>
+            <label for="comentario">Comentario :</label>
+            <br>
+            <textarea name="comentario" rows="8" cols="40"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Borrar">
+          </td>
+        </tr>
+      </table>
+    </form>
+  </tbody>
+</body>
+
+</html>
