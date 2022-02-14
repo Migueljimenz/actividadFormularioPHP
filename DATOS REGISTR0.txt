@@ -1,0 +1,14 @@
+Fecha : 2022-02-13
+Nombre : Miguel Alejandro
+Apellido : Jimenez Arteta
+Email : migueljiarteta@gmail.com
+Fecha Nacimiento : 1867-01-17
+Edad : 155
+Sexo : Masculino
+Direccion : Calle 10 3-49
+Barrio : Campo
+Ciudad : Barranquilla
+Estrato : 4
+Participacion : no tiene privilegios
+Gustos : Lectura,Musica,Deporte,
+Comentario : Que sea lo que Dios quiera.

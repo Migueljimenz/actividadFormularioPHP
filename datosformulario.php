@@ -10,6 +10,7 @@
 
 <body>
   <tbody>
+    <h2>Informacion :</h2>
     <form>
       <table border=1>
         <tr>
@@ -34,18 +35,18 @@
             ?>
           </td>
           <td>
-            <label for="edad">Fecha Nacimiento :</label>
+            <label >Fecha Nacimiento :</label>
             <?php
             $fechaNacimiento = $_REQUEST['edad'];
             echo $fechaNacimiento;
             echo "<br>";
             ?>
+            <label >Edad :</label>
             <?php
-            $fechaActual = date("Y-m-d");
-            $edad = $fechaActual - $fechaNacimiento;
-            echo "Edad: " . $edad;
+             $fechactual = date("Y-m-d");
+            $edad = ((int)$fechactual - (int)$fechaNacimiento);
+            echo $_REQUEST['cantidadAños'] = $edad;
             ?>
-
           </td>
         <tr>
         <tr>
@@ -56,6 +57,11 @@
             ?>
           </td>
           <td>
+          <label>Direccion :</label>
+           <?php
+           echo $_REQUEST['direccion'];
+           echo "<br>";
+           ?>
             <label for="estrato">Estrato :</label>
             <?php
             echo $_REQUEST['estrato'];
@@ -75,7 +81,6 @@
         <tr>
           <td>
             <label for="sexo">Sexo :</label>
-
             <?php
             if ($_REQUEST['sexo'] == "M") {
               echo "Masculino";
@@ -154,6 +159,97 @@
       </table>
     </form>
   </tbody> 
+           <?php
+           $ar = fopen("DATOS REGISTR0.txt", "a") or die("error al crear archivo");
+            fputs($ar,"Fecha : ");
+            fputs($ar,$_REQUEST['fecha']);
+            fputs($ar,"\n");
+           fputs($ar,"Nombre : ");
+           fputs($ar,$_REQUEST['nombre']);
+           fputs($ar,"\n");
+           fputs($ar,"Apellido : ");
+           fputs($ar,$_REQUEST['apellido']);
+           fputs($ar,"\n");
+           fputs($ar,"Email : ");
+           fputs($ar,$_REQUEST['email']);
+           fputs($ar,"\n");
+           fputs($ar,"Fecha Nacimiento : ");
+           fputs($ar,$_REQUEST['edad']);
+           fputs($ar,"\n");
+           fputs($ar,"Edad : ");
+           fputs($ar,$_REQUEST['cantidadAños']);
+           fputs($ar,"\n");
+           fputs($ar, "Sexo : ");
+          if($_REQUEST['sexo'] == "M"){
+            fputs($ar, "Masculino");
+            fputs($ar, "\n");
+          }elseif($_REQUEST['sexo'] == "F"){
+            fputs($ar, "Femenino");
+            fputs($ar, "\n");
+          }else{
+            fputs($ar,"Otro");
+            fputs($ar,"\n");
+          };
+           fputs($ar, "Direccion : ");
+           fputs($ar, $_REQUEST['direccion']);
+           fputs($ar,"\n");
+           fputs($ar,"Barrio : ");
+           if($_REQUEST['barrio'] == "V"){
+             fputs($ar,"Vaiven");
+             fputs($ar,"\n");
+           }elseif($_REQUEST['barrio'] == "D"){
+             fputs($ar,"Delicias");
+             fputs($ar,"\n");
+           }elseif($_REQUEST['barrio'] == "C"){
+             fputs($ar,"Campo");
+             fputs($ar,"\n");
+           }elseif($_REQUEST['barrio'] == "R"){
+             fputs($ar,"Repaso");
+             fputs($ar,"\n");
+           };
+           fputs($ar,"Ciudad : ");
+           if($_REQUEST['ciudad'] == "B"){
+             fputs($ar,"Barranquilla");
+             fputs($ar,"\n");
+           }elseif($_REQUEST['ciudad'] == "M"){
+             fputs($ar,"Medellin");
+             fputs($ar,"\n");
+           }elseif($_REQUEST['ciudad'] == "C"){
+             fputs($ar,"Cucuta");
+             fputs($ar,"\n");
+           }elseif($_REQUEST['Bogota'] == "BO"){
+             fputs($ar,"Bogota");
+             fputs($ar,"\n");
+           };
+           fputs($ar, "Estrato : ");
+           fputs($ar, $_REQUEST['estrato']);
+           fputs($ar,"\n");
+           fputs($ar,"Participacion : ");
+           if($_REQUEST['estrato'] == 1 or $_REQUEST['estrato'] == 2){
+             fputs($ar,"Participa en Jovenes en Accion");
+           }elseif($_REQUEST['estrato'] == 3){
+             fputs($ar,"Participa en Patrocinio SENA");
+           }else{
+             fputs($ar,"no tiene privilegios");
+             fputs($ar,"\n");
+           };
+           fputs($ar,"Gustos : ");
+           if(isset($_REQUEST['lectura']) == "lectura"){
+             fputs($ar,"Lectura,");
+           }if(isset($_REQUEST['musica']) == "musica"){
+             fputs($ar,"Musica,");
+           }if(isset($_REQUEST['deporte']) == "deporte"){
+             fputs($ar,"Deporte,");
+           }if(isset($_REQUEST['viajar']) == "viajar"){
+             fputs($ar,"Viajar");
+           };
+           fputs($ar,"\n");
+           fputs($ar,"Comentario : ");
+           fputs($ar,$_REQUEST['comentario']);
+           fputs($ar,"\n");
+echo "archivo creado correctamente";
+           ?> 
+           
 </body>
 
 </html>
